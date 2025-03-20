@@ -673,6 +673,30 @@ export class Decimal128 {
         return ourCohort.cmp(theirCohort);
     }
 
+    lessThan(v: Decimal128): boolean {
+        return this.compare(v) < 0;
+    }
+
+    lessThanOrEquals(v: Decimal128): boolean {
+        return this.compare(v) <= 0;
+    }
+
+    greaterThan(v: Decimal128): boolean {
+        return this.compare(v) > 0;
+    }
+
+    greaterThanOrEquals(v: Decimal128): boolean {
+        return this.compare(v) >= 0;
+    }
+
+    equals(v: Decimal128): boolean {
+        return this.compare(v) === 0;
+    }
+
+    notEquals(v: Decimal128): boolean {
+        return this.compare(v) !== 0;
+    }
+
     abs(): Decimal128 {
         if (this.isNaN()) {
             return new Decimal128(NAN);
