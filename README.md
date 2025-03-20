@@ -94,7 +94,7 @@ Decimal128 values can be constructed from:
 - less than or equal to (`lessThanOrEquals`) to compare mathematical order
 - greater than (`greaterThan`) to compare mathematical order
 - greater than or equal to (`greaterThanOrEquals`) to compare mathematical order
-- compare (`cmp`) to compare mathematical order
+- compare (`compare`) to compare mathematical order
 
 Why not just less-than and equals? The reason for the proliferation of all these comparisons is due to `NaN` and `-0`,
 which is not 0). Thus, simply negating `lessThan` does not give you `greaterThanOrEquals`. Even if you know you're

@@ -262,11 +262,11 @@ export class Decimal128 {
         let decimalOne = new Decimal128("1");
         let decimalTen = new Decimal128("10");
 
-        while (0 <= x.cmp(decimalTen)) {
+        while (0 <= x.compare(decimalTen)) {
             x = x.scale10(-1);
         }
 
-        while (x.cmp(decimalOne) === -1) {
+        while (x.compare(decimalOne) === -1) {
             x = x.scale10(1);
         }
 
@@ -627,7 +627,7 @@ export class Decimal128 {
      *
      * @param x
      */
-    cmp(x: Decimal128): number {
+    compare(x: Decimal128): number {
         if (this.isNaN() || x.isNaN()) {
             return NaN;
         }
@@ -1103,7 +1103,7 @@ export class Decimal128 {
             return new Decimal128(NAN);
         }
 
-        if (this.cmp(d) === -1) {
+        if (this.compare(d) === -1) {
             return this.clone();
         }
 
